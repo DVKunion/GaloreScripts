@@ -1,0 +1,9 @@
+apiVersion: audit.k8s.io/v1
+kind: Policy
+rules:
+  - level: RequestResponse
+    resources:
+      - group: ""
+        resources: [
+          "pods", "pods/attach", "pods/binding", "pods/eviction", "pods/exec", "pods/log", "pods/portforward", "pods/proxy", "pods/status"
+        ]

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: host-root-pod
+spec:
+  containers:
+    - name: host-root-container
+      image: nginx
+      volumeMounts:
+        - name: host-root
+          mountPath: /host-root
+      securityContext:
+        privileged: true
+  volumes:
+    - name: host-root
+      hostPath:
+        path: /

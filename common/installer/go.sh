@@ -1,7 +1,7 @@
 #! /bin/bash
 # use like ` ./install-go 1.20.1 `
-# use proxy  ` ./install-go 1.20.1 `
-source common.sh
+# use proxy  ` ./install-go 1.20.1 official`
+source common/system/os.sh
 check
 
 version=$1
@@ -21,10 +21,10 @@ fi
 
 # add $PATH
 which go
-if [ $? -ne 0  ]; then
-  echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.profile
+if [ $? -ne 0 ]; then
+  echo "export PATH=\$PATH:/usr/local/go/bin" >>~/.profile
   source ~/.profile
-  echo "export PATH=\$PATH:/usr/local/go/bin" >> ~/.zshrc
+  echo "export PATH=\$PATH:/usr/local/go/bin" >>~/.zshrc
   source ~/.zshrc
 fi
 
